@@ -38,7 +38,7 @@ const LoginForm = () => {
     console.log("Request Data:", { username: email, password });
 
     try {
-      const response = await axios.post("http://localhost:5000/api/auth/login", {
+      const response = await axios.post("http://103.159.85.246:4000/api/auth/login", {
         username: email, // Assuming you use email as the username
         password: password,
       });

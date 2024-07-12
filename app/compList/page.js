@@ -70,7 +70,7 @@ const CompanyList = () => {
                     return;
                 }
                 // Fetch the list of companies from your API endpoint using Axios
-                const response = await axios.get('http://localhost:5000/api/company/companies', {
+                const response = await axios.get('http://103.159.85.246:4000/api/company/companies', {
                     headers: {
                         Authorization: token,
                     },
@@ -102,7 +102,7 @@ const CompanyList = () => {
     const editCompany = async () => {
         try {
             // Send a PUT request to update the company's details
-            await axios.put(`http://localhost:5000/api/company/companies/${editedCompany._id}`, editedCompany);
+            await axios.put(`http://103.159.85.246:4000/api/company/companies/${editedCompany._id}`, editedCompany);
 
             // Update the company list with the edited data (optional)
             setCompanies(companies.map((company) =>
@@ -128,7 +128,7 @@ const CompanyList = () => {
     const confirmDelete = async (companyId) => {
         try {
             // Send a DELETE request to delete the company by ID
-            await axios.delete(`http://localhost:5000/api/company/companies/${companyId}`);
+            await axios.delete(`http://103.159.85.246:4000/api/company/companies/${companyId}`);
 
             // Update the company list after successful deletion (optional)
             setCompanies(companies.filter((company) => company._id !== companyId));

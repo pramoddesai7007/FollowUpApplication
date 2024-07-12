@@ -142,7 +142,7 @@ const NavSide = () => {
                 setLeadModalOpen(true);
 
                 // Call the provided API endpoint to mark the notification as read on the server
-                await axios.put(`http://localhost:5000/api/lead/notifications/${notification._id}`, null, {
+                await axios.put(`http://103.159.85.246:4000/api/lead/notifications/${notification._id}`, null, {
                     headers: {
                         Authorization: localStorage.getItem('authToken'),
                     },
@@ -159,7 +159,7 @@ const NavSide = () => {
     // Change Password Function
     const handleChangePassword = async () => {
         try {
-            const response = await axios.post('http://localhost:5000/api/auth/changePassword', {
+            const response = await axios.post('http://103.159.85.246:4000/api/auth/changePassword', {
                 email: changePasswordData.email,
                 currentPassword: changePasswordData.currentPassword,
                 newPassword: changePasswordData.newPassword,
@@ -201,7 +201,7 @@ const NavSide = () => {
 
         // Mark the notification as read on the server
         try {
-            await axios.put(`http://localhost:5000/api/notification/${task._id}/read`, null, {
+            await axios.put(`http://103.159.85.246:4000/api/notification/${task._id}/read`, null, {
                 headers: {
                     Authorization: localStorage.getItem('authToken'),
                 },
@@ -223,7 +223,7 @@ const NavSide = () => {
 
     const fetchAssignedByName = useCallback(async (taskId) => {
         try {
-            const response = await axios.get(`http://localhost:5000/api/employee/${taskId}`, {
+            const response = await axios.get(`http://103.159.85.246:4000/api/employee/${taskId}`, {
                 headers: {
                     Authorization: localStorage.getItem('authToken'),
                 },
@@ -245,7 +245,7 @@ const NavSide = () => {
             // if (!empUsername && typeof window !== 'undefined') 
             {
 
-                const response = await axios.get('http://localhost:5000/api/notification/notification', {
+                const response = await axios.get('http://103.159.85.246:4000/api/notification/notification', {
                     headers: {
                         Authorization: localStorage.getItem('authToken'),
                     },
@@ -277,7 +277,7 @@ const NavSide = () => {
     // Get Lead Notification Function
     const fetchEnvelopeNotifications = useCallback(async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/lead/notifications');
+            const response = await axios.get('http://103.159.85.246:4000/api/lead/notifications');
 
             if (response.status === 200) {
                 const notifications = response.data;
@@ -366,7 +366,7 @@ const NavSide = () => {
         // Mark the notification as read on the server
         try {
             await axios.put(
-                `http://localhost:5000/api/reminderNotification/${task._id}/read`,
+                `http://103.159.85.246:4000/api/reminderNotification/${task._id}/read`,
                 null,
                 {
                     headers: {
@@ -402,7 +402,7 @@ const NavSide = () => {
         try {
             const formData = new FormData();
             formData.append('profilePicture', file);
-            const response = await axios.post('http://localhost:5000/api/task/upload-profile-picture', formData, {
+            const response = await axios.post('http://103.159.85.246:4000/api/task/upload-profile-picture', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },
@@ -443,7 +443,7 @@ const NavSide = () => {
     // const fetchApproachingEndTimeTasks = async () => {
     //     try {
     //         const response = await axios.get(
-    //             "http://localhost:5000/api/reminderNotification/reminder",
+    //             "http://103.159.85.246:4000/api/reminderNotification/reminder",
     //             {
     //                 headers: {
     //                     Authorization: localStorage.getItem("authToken"),
@@ -493,7 +493,7 @@ const NavSide = () => {
 
     // const handleClockIn = async () => {
     //     try {
-    //         const response = await axios.post('http://localhost:5000/api/salary/clock-ins', {
+    //         const response = await axios.post('http://103.159.85.246:4000/api/salary/clock-ins', {
     //             email: 'niru@gmail.com', // Replace with actual user email
     //             role: 'sales', // Replace with actual role
     //             ip: '192.168.1.1', // Replace with actual IP
@@ -517,7 +517,7 @@ const NavSide = () => {
 
     // const handleClockOut = async () => {
     //     try {
-    //         const response = await axios.post('http://localhost:5000/api/salary/clock-outs', {
+    //         const response = await axios.post('http://103.159.85.246:4000/api/salary/clock-outs', {
     //             email: 'niru@gmail.com', // Replace with actual user email
     //             role: 'sales', // Replace with actual role
     //             ip: '192.168.1.1', // Replace with actual IP

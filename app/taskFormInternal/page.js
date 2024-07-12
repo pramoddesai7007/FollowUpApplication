@@ -82,7 +82,7 @@ const TaskFormInternal = () => {
         }
 
         axios
-            .get("http://localhost:5000/api/employee/subemployees/list", {
+            .get("http://103.159.85.246:4000/api/employee/subemployees/list", {
                 headers: {
                     Authorization: localStorage.getItem("authToken"),
                 },
@@ -230,7 +230,7 @@ const TaskFormInternal = () => {
 
         try {
             const response = await axios.post(
-                "http://localhost:5000/api/task/createSubemployeeTask",
+                "http://103.159.85.246:4000/api/task/createSubemployeeTask",
                 requestBody,
                 {
                     headers: {
@@ -245,7 +245,7 @@ const TaskFormInternal = () => {
 
                 setErrors([]);
 
-                const notificationResponse = await axios.post('http://localhost:5000/api/notification/create', {
+                const notificationResponse = await axios.post('http://103.159.85.246:4000/api/notification/create', {
                     recipientId: formData.assignTo,
                     taskId: response.data.taskId,
                     message: 'A new task has been assigned to you!',
@@ -269,7 +269,7 @@ const TaskFormInternal = () => {
                 }
 
                 // Call the reminder notification API
-                const reminderNotificationResponse = await axios.post('http://localhost:5000/api/reminderNotification/create', {
+                const reminderNotificationResponse = await axios.post('http://103.159.85.246:4000/api/reminderNotification/create', {
                     recipientId: formData.assignTo,
                     taskId: response.data.taskId,
                     reminderTime: currentReminderTime,

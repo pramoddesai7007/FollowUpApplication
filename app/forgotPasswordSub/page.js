@@ -19,7 +19,7 @@ const ForgotPasswordSub = () => {
         try {
             console.log(email)
             // Send a POST request to the /forgotPassword endpoint
-            const response = await axios.post('http://localhost:5000/api/auth/forgotPasswordSub', {
+            const response = await axios.post('http://103.159.85.246:4000/api/auth/forgotPasswordSub', {
                 email: email, // Assuming you use email as the username
             });
             

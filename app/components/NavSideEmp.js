@@ -154,7 +154,7 @@ const NavSideEmp = () => {
 
         // Call the provided API endpoint to mark the notification as read on the server
         await axios.put(
-          `http://localhost:5000/api/lead/notifications/${notification._id}`,
+          `http://103.159.85.246:4000/api/lead/notifications/${notification._id}`,
           null,
           {
             headers: {
@@ -176,7 +176,7 @@ const NavSideEmp = () => {
     // Function to change the password
     try {
       const response = await axios.post(
-        "http://localhost:5000/api/auth/changePassword",
+        "http://103.159.85.246:4000/api/auth/changePassword",
         {
           email: changePasswordData.email,
           currentPassword: changePasswordData.currentPassword,
@@ -228,7 +228,7 @@ const NavSideEmp = () => {
     // Mark the notification as read on the server
     try {
       await axios.put(
-        `http://localhost:5000/api/notification/${task._id}/read`,
+        `http://103.159.85.246:4000/api/notification/${task._id}/read`,
         null,
         {
           headers: {
@@ -264,7 +264,7 @@ const NavSideEmp = () => {
   //   // Mark the notification as read on the server
   //   try {
   //     await axios.put(
-  //       `http://localhost:5000/api/reminderNotification/${task._id}/read`,
+  //       `http://103.159.85.246:4000/api/reminderNotification/${task._id}/read`,
   //       null,
   //       {
   //         headers: {
@@ -304,7 +304,7 @@ const NavSideEmp = () => {
     // Mark the notification as read on the server
     try {
       await axios.put(
-        `http://localhost:5000/api/reminderNotification/${task._id}/read`,
+        `http://103.159.85.246:4000/api/reminderNotification/${task._id}/read`,
         null,
         {
           headers: {
@@ -343,7 +343,7 @@ const NavSideEmp = () => {
   // const fetchAssignedByName = useCallback(async (taskId) => {
   //   try {
   //     const response = await axios.get(
-  //       `http://localhost:5000/api/employee/${taskId}`,
+  //       `http://103.159.85.246:4000/api/employee/${taskId}`,
   //       {
   //         headers: {
   //           Authorization: localStorage.getItem("authToken"),
@@ -363,7 +363,7 @@ const NavSideEmp = () => {
   const fetchAssignedByName = async (taskId) => {
     try {
       const response = await axios.get(
-        `http://localhost:5000/api/employee/${taskId}`,
+        `http://103.159.85.246:4000/api/employee/${taskId}`,
         {
           headers: {
             Authorization: localStorage.getItem("authToken"),
@@ -384,7 +384,7 @@ const NavSideEmp = () => {
   //     const empUsername = localStorage.getItem("empUsername");
   //     if (!empUsername && typeof window !== "undefined") {
   //       const response = await axios.get(
-  //         "http://localhost:5000/api/notification/notifications",
+  //         "http://103.159.85.246:4000/api/notification/notifications",
   //         {
   //           headers: {
   //             Authorization: localStorage.getItem("authToken"),
@@ -424,7 +424,7 @@ const NavSideEmp = () => {
       const empUsername = localStorage.getItem("empUsername");
       if (!empUsername && typeof window !== "undefined") {
         const response = await axios.get(
-          "http://localhost:5000/api/notification/notifications",
+          "http://103.159.85.246:4000/api/notification/notifications",
           {
             headers: {
               Authorization: localStorage.getItem("authToken"),
@@ -468,7 +468,7 @@ const NavSideEmp = () => {
   const fetchEnvelopeNotifications = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5000/api/lead/notifications"
+        "http://103.159.85.246:4000/api/lead/notifications"
       );
 
       if (response.status === 200) {
@@ -531,7 +531,7 @@ const NavSideEmp = () => {
       const formData = new FormData();
       formData.append("profilePicture", file);
       const response = await axios.post(
-        "http://localhost:5000/api/task/upload-profile-picture",
+        "http://103.159.85.246:4000/api/task/upload-profile-picture",
         formData,
         {
           headers: {
@@ -587,7 +587,7 @@ const NavSideEmp = () => {
   // const fetchApproachingEndTimeTasks = async () => {
   //   try {
   //     const response = await axios.get(
-  //       "http://localhost:5000/api/reminderNotification/notifications",
+  //       "http://103.159.85.246:4000/api/reminderNotification/notifications",
   //       {
   //         headers: {
   //           Authorization: localStorage.getItem("authToken"),
@@ -619,7 +619,7 @@ const NavSideEmp = () => {
   const fetchApproachingEndTimeTasks = async () => {
     try {
       const response = await axios.get(
-        "http://localhost:5000/api/reminderNotification/notifications",
+        "http://103.159.85.246:4000/api/reminderNotification/notifications",
         {
           headers: {
             Authorization: localStorage.getItem("authToken"),
@@ -740,7 +740,7 @@ const NavSideEmp = () => {
         const token = localStorage.getItem('authToken');
 
         // Proceed with clock-in
-        const clockInResponse = await axios.post('http://localhost:5000/api/salary/clock-ins', requestBody,{
+        const clockInResponse = await axios.post('http://103.159.85.246:4000/api/salary/clock-ins', requestBody,{
           headers: {
             Authorization: token,
         },
@@ -805,7 +805,7 @@ const NavSideEmp = () => {
         const token = localStorage.getItem('authToken');
 
         // Proceed with clock-in
-        const clockInResponse = await axios.post('http://localhost:5000/api/salary/clock-outs', requestBody,{
+        const clockInResponse = await axios.post('http://103.159.85.246:4000/api/salary/clock-outs', requestBody,{
           headers: {
             Authorization: token,
         },
@@ -836,7 +836,7 @@ const NavSideEmp = () => {
 
   // const handleClockOut = async () => {
   //   try {
-  //     const response = await axios.post('http://localhost:5000/api/salary/clock-outs', {
+  //     const response = await axios.post('http://103.159.85.246:4000/api/salary/clock-outs', {
   //       email: email, // Replace with actual user email
   //       role: type, // Replace with actual role
   //       ip: '192.168.1.1', // Replace with actual IP

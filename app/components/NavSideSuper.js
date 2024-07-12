@@ -52,7 +52,7 @@ const NavSideSuper = () => {
     const handleChangePassword = async () => {
         // Function to change the password
         try {
-            const response = await axios.post('http://localhost:5000/api/auth/changePassword', {
+            const response = await axios.post('http://103.159.85.246:4000/api/auth/changePassword', {
                 email: changePasswordData.email,
                 currentPassword: changePasswordData.currentPassword,
                 newPassword: changePasswordData.newPassword,
@@ -123,7 +123,7 @@ const NavSideSuper = () => {
         try {
             const formData = new FormData();
             formData.append('profilePicture', file);
-            const response = await axios.post('http://localhost:5000/api/task/upload-profile-picture', formData, {
+            const response = await axios.post('http://103.159.85.246:4000/api/task/upload-profile-picture', formData, {
                 headers: {
                     'Content-Type': 'multipart/form-data',
                 },

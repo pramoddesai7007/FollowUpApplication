@@ -71,7 +71,7 @@ const LeadListEmp = () => {
   }
     try {
       const token = localStorage.getItem('authToken');
-      const response = await axios.put(`http://localhost:5000/api/lead/editLead/${editedLead._id}`, editedLead, {
+      const response = await axios.put(`http://103.159.85.246:4000/api/lead/editLead/${editedLead._id}`, editedLead, {
         headers: {
           Authorization: token,
         },
@@ -116,7 +116,7 @@ const LeadListEmp = () => {
     const fetchLeads = async () => {
       try {
         const token = localStorage.getItem('authToken');
-        const response = await axios.get('http://localhost:5000/api/lead/leadList', {
+        const response = await axios.get('http://103.159.85.246:4000/api/lead/leadList', {
           headers: {
             Authorization: token,
           },
@@ -144,7 +144,7 @@ const LeadListEmp = () => {
   const handleConfirmDelete = async () => {
     try {
       const token = localStorage.getItem('authToken');
-      const response = await axios.delete(`http://localhost:5000/api/lead/deleteLead/${leadToDelete._id}`, {
+      const response = await axios.delete(`http://103.159.85.246:4000/api/lead/deleteLead/${leadToDelete._id}`, {
         headers: {
           Authorization: token,
         },
@@ -172,7 +172,7 @@ const LeadListEmp = () => {
   };
 
   const handlePicturePreview = (imageUrl) => {
-    const completeImageUrl = `http://localhost:5000/${imageUrl}`; // Generate the complete image URL
+    const completeImageUrl = `http://103.159.85.246:4000/${imageUrl}`; // Generate the complete image URL
     console.log(completeImageUrl)
     setPreviewImageUrl(completeImageUrl);
     setIsPreviewModalOpen(true);

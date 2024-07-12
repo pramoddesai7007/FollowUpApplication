@@ -18,7 +18,7 @@
 
 //     const fetchIPAddresses = async () => {
 //         try {
-//             const response = await axios.get('http://localhost:5000/api/salary/ip');
+//             const response = await axios.get('http://103.159.85.246:4000/api/salary/ip');
 //             setIpList(response.data);
 //         } catch (error) {
 //             console.error('Error fetching IP addresses:', error);
@@ -42,7 +42,7 @@
 //                 showError('IP address cannot be empty');
 //                 return;
 //             }
-//             await axios.post('http://localhost:5000/api/salary/ip', { ip: ipAddress });
+//             await axios.post('http://103.159.85.246:4000/api/salary/ip', { ip: ipAddress });
 //             setIpAddress('');
 //             fetchIPAddresses();
 //             setErrorMessage('');
@@ -130,7 +130,7 @@ const IPManagement = () => {
 
     const fetchIPAddresses = async () => {
         try {
-            const response = await axios.get('http://localhost:5000/api/salary/ip', {
+            const response = await axios.get('http://103.159.85.246:4000/api/salary/ip', {
                 headers: {
                     'Authorization': `${localStorage.getItem('authToken')}`
                 }
@@ -158,7 +158,7 @@ const IPManagement = () => {
                 showError('IP address cannot be empty');
                 return;
             }
-            await axios.post('http://localhost:5000/api/salary/ip', { ip: ipAddress }, {
+            await axios.post('http://103.159.85.246:4000/api/salary/ip', { ip: ipAddress }, {
                 headers: {
                     'Authorization': `${localStorage.getItem('authToken')}`
                 }

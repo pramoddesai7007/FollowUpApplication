@@ -39,7 +39,7 @@ const EmployeeLoginForm = () => {
     //     e.preventDefault();
 
     //     try {
-    //         const response = await axios.post('http://localhost:5000/api/employee/login', {
+    //         const response = await axios.post('http://103.159.85.246:4000/api/employee/login', {
     //             email: email,
     //             password: password,
     //         });
@@ -65,7 +65,7 @@ const handleSubmit = async (e) => {
     e.preventDefault();
 
     try {
-        const response = await axios.post('http://localhost:5000/api/employee/login', {
+        const response = await axios.post('http://103.159.85.246:4000/api/employee/login', {
             email: email,
             password: password,
         });

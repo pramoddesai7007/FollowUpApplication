@@ -10,7 +10,7 @@
 //   useEffect(() => {
 //     const fetchAssignedEmployees = async () => {
 //       try {
-//         const response = await axios.get('http://localhost:5000/api/task/tasks/assigned'); // Assuming your API endpoint is '/api/tasks/assigned'
+//         const response = await axios.get('http://103.159.85.246:4000/api/task/tasks/assigned'); // Assuming your API endpoint is '/api/tasks/assigned'
 //         console.log(response.data)
 //         setEmployees(response.data);
 //       } catch (error) {
@@ -93,7 +93,7 @@ const InactiveuserList = () => {
     useEffect(() => {
         const fetchAssignedEmployees = async () => {
           try {
-            const response = await axios.get('http://localhost:5000/api/task/tasks/inactive-users'); // Assuming your API endpoint is '/api/tasks/assigned'
+            const response = await axios.get('http://103.159.85.246:4000/api/task/tasks/inactive-users'); // Assuming your API endpoint is '/api/tasks/assigned'
             console.log(response.data)
             setEmployees(response.data);
           } catch (error) {

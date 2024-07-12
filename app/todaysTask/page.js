@@ -14,7 +14,7 @@ const TodaysTask = () => {
     const fetchTodaysTasks = async () => {
       try {
         const token = localStorage.getItem('authToken');
-        const response = await axios.get('http://localhost:5000/api/task/tasks/today', {
+        const response = await axios.get('http://103.159.85.246:4000/api/task/tasks/today', {
           headers: {
             Authorization: token,
           },
@@ -24,7 +24,7 @@ const TodaysTask = () => {
         const fetchUserName = async (assignTo) => {
           try {
             const token = localStorage.getItem('authToken');
-            const userResponse = await axios.get(`http://localhost:5000/api/subemployee/${assignTo}`, {
+            const userResponse = await axios.get(`http://103.159.85.246:4000/api/subemployee/${assignTo}`, {
               headers: {
                 Authorization: token,
               },

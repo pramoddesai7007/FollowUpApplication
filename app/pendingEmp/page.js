@@ -62,7 +62,7 @@ const ReceivedTaskList = () => {
   );
 
   const handlePicturePreview = (imageUrl) => {
-    const completeImageUrl = `http://localhost:5000/${imageUrl}`; // Generate the complete image URL
+    const completeImageUrl = `http://103.159.85.246:4000/${imageUrl}`; // Generate the complete image URL
     setPreviewImageUrl(completeImageUrl);
     setIsPreviewModalOpen(true);
   };
@@ -73,7 +73,7 @@ const ReceivedTaskList = () => {
     try {
       const token = localStorage.getItem('authToken');
       const response = await axios.put(
-        `http://localhost:5000/api/task/complete/${taskId}`,
+        `http://103.159.85.246:4000/api/task/complete/${taskId}`,
         {},
         {
           headers: {
@@ -97,7 +97,7 @@ const ReceivedTaskList = () => {
   const handleViewClick = async (taskId) => {
     try {
       const token = localStorage.getItem('authToken');
-      const response = await axios.get(`http://localhost:5000/api/task/${taskId}`, {
+      const response = await axios.get(`http://103.159.85.246:4000/api/task/${taskId}`, {
         headers: {
           Authorization: token,
         },
@@ -147,7 +147,7 @@ const ReceivedTaskList = () => {
       }
 
       try {
-        const response = await axios.get('http://localhost:5000/api/task/tasksList/assignedTo', {
+        const response = await axios.get('http://103.159.85.246:4000/api/task/tasksList/assignedTo', {
           headers: {
             Authorization: token,
             'Content-Type': 'application/json',
@@ -387,7 +387,7 @@ const ReceivedTaskList = () => {
                       <span className='mr-1 '><strong>Audio:</strong></span>{" "}
                       {viewTask.audio ? (
                         <audio controls className='w=64 h-8 md:w-96 md:h-10 text-lg'>
-                          <source src={`http://localhost:5000/${viewTask.audio}`} type="audio/mp3" />
+                          <source src={`http://103.159.85.246:4000/${viewTask.audio}`} type="audio/mp3" />
                           Your browser does not support the audio element.
                         </audio>
 

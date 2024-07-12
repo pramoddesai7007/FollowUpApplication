@@ -55,7 +55,7 @@ const Overdue = () => {
 
 
   const handlePicturePreview = (imageUrl) => {
-    const completeImageUrl = `http://localhost:5000/${imageUrl}`; // Generate the complete image URL
+    const completeImageUrl = `http://103.159.85.246:4000/${imageUrl}`; // Generate the complete image URL
     setPreviewImageUrl(completeImageUrl);
     setIsPreviewModalOpen(true);
   };
@@ -92,7 +92,7 @@ const Overdue = () => {
       try {
         const authToken = localStorage.getItem('authToken');
 
-        const response = await axios.get('http://localhost:5000/api/task/tasks/overdue', {
+        const response = await axios.get('http://103.159.85.246:4000/api/task/tasks/overdue', {
           headers: {
             Authorization: authToken,
           },
@@ -103,12 +103,12 @@ const Overdue = () => {
           // Map assignTo and assignedBy IDs to names
           const tasksWithNames = await Promise.all(
             response.data.overdueTasks.map(async (task) => {
-              const assignToNameResponse = await axios.get(`http://localhost:5000/api/subemployee/${task.assignTo}`, {
+              const assignToNameResponse = await axios.get(`http://103.159.85.246:4000/api/subemployee/${task.assignTo}`, {
                 headers: {
                   Authorization: authToken, // Include Authorization header for employee request
                 },
               });
-              const assignedByNameResponse = await axios.get(`http://localhost:5000/api/employee/${task.assignedBy}`, {
+              const assignedByNameResponse = await axios.get(`http://103.159.85.246:4000/api/employee/${task.assignedBy}`, {
                 headers: {
                   Authorization: authToken, // Include Authorization header for employee request
                 },
@@ -224,7 +224,7 @@ const Overdue = () => {
         editedTask.startDate !== updatedTaskData.startDate ||
         editedTask.deadlineDate !== updatedTaskData.deadlineDate
       ) {
-        await axios.put(`http://localhost:5000/api/task/open/${editedTask._id}`, updatedTaskData, {
+        await axios.put(`http://103.159.85.246:4000/api/task/open/${editedTask._id}`, updatedTaskData, {
           headers: {
             Authorization: localStorage.getItem('authToken'),
           },
@@ -453,7 +453,7 @@ const Overdue = () => {
                   <span className='mr-1 '><strong>Audio:</strong></span>{" "}
                   {viewTask.audio ? (
                     <audio controls className='w-64 h-8 md:w-96 md-h-10 text-lg'>
-                      <source src={`http://localhost:5000/${viewTask.audio}`} type="audio/mp3" />
+                      <source src={`http://103.159.85.246:4000/${viewTask.audio}`} type="audio/mp3" />
                       Your browser does not support the audio element.
                     </audio>
 

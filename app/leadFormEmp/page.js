@@ -84,7 +84,7 @@ const LeadFormEmp = () => {
     }
         // Make an API call to create a lead with the token in the headers
         try {
-            const response = await axios.post('http://localhost:5000/api/lead/createLead', formDataWithFile, { headers });
+            const response = await axios.post('http://103.159.85.246:4000/api/lead/createLead', formDataWithFile, { headers });
             console.log('Lead created:', response.data);
             setSuccessMessage('Lead Created Successfully')
             setIsSuccessModalOpen(true)
@@ -101,7 +101,7 @@ const LeadFormEmp = () => {
                 leadPicture: formData.leadPicture
             };
 
-            const leadNotificationResponse = await axios.post('http://localhost:5000/api/lead/create/Notification', leadNotificationData, { headers });
+            const leadNotificationResponse = await axios.post('http://103.159.85.246:4000/api/lead/create/Notification', leadNotificationData, { headers });
             console.log('Lead notification created:', leadNotificationResponse.data);
             setSuccessMessage("Lead Created Successfully")
             setIsSuccessModalOpen(true)

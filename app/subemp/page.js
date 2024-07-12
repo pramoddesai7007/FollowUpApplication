@@ -59,7 +59,7 @@
 //         const fetchAdminCompany = async () => {
 //             try {
 //                 const token = localStorage.getItem('authToken'); // Retrieve JWT token from localStorage
-//                 const response = await axios.get('http://localhost:5000/api/employee/subemployees/company', {
+//                 const response = await axios.get('http://103.159.85.246:4000/api/employee/subemployees/company', {
 //                     headers: {
 //                         Authorization: token, // Include JWT token in the request headers
 //                     },
@@ -97,7 +97,7 @@
 //         // Send a POST request to create the subemployee
 //         try {
 //             const token = localStorage.getItem('authToken'); // Retrieve JWT token from localStorage
-//             await axios.post('http://localhost:5000/api/employee/registersub', subEmployee, {
+//             await axios.post('http://103.159.85.246:4000/api/employee/registersub', subEmployee, {
 //                 headers: {
 //                     Authorization: token, // Include JWT token in the request headers
 //                 },
@@ -357,7 +357,7 @@ const SubemployeeForm = () => {
         const fetchAdminCompany = async () => {
             try {
                 const token = localStorage.getItem('authToken');
-                const response = await axios.get('http://localhost:5000/api/employee/subemployees/company', {
+                const response = await axios.get('http://103.159.85.246:4000/api/employee/subemployees/company', {
                     headers: {
                         Authorization: token,
                     },
@@ -423,7 +423,7 @@ const SubemployeeForm = () => {
             const token = localStorage.getItem('authToken');
 
             // Register subemployee
-            const registerResponse = await axios.post('http://localhost:5000/api/employee/registersub', subEmployee, {
+            const registerResponse = await axios.post('http://103.159.85.246:4000/api/employee/registersub', subEmployee, {
                 headers: {
                     Authorization: token,
                 },
@@ -432,7 +432,7 @@ const SubemployeeForm = () => {
             console.log('Register response:', registerResponse);
 
             // Set hourly rate
-            const setRateResponse = await axios.post('http://localhost:5000/api/salary/set-rate', {
+            const setRateResponse = await axios.post('http://103.159.85.246:4000/api/salary/set-rate', {
                 name: subEmployee.name,
                 email: subEmployee.email,
                 hourlyRate: subEmployee.upto,

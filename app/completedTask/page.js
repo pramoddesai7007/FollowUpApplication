@@ -45,7 +45,7 @@ const CompletedTaskList = () => {
   };
 
   const handlePicturePreview = (imageUrl) => {
-    const completeImageUrl = `http://localhost:5000/${imageUrl}`; // Generate the complete image URL
+    const completeImageUrl = `http://103.159.85.246:4000/${imageUrl}`; // Generate the complete image URL
     setPreviewImageUrl(completeImageUrl);
     setIsPreviewModalOpen(true);
   };
@@ -99,7 +99,7 @@ const CompletedTaskList = () => {
     
       const fetchCompletedTasks = async () => {
         try {
-          const response = await axios.get('http://localhost:5000/api/task/tasks/completed', {
+          const response = await axios.get('http://103.159.85.246:4000/api/task/tasks/completed', {
             headers: {
               Authorization: localStorage.getItem('authToken'),
             },
@@ -107,7 +107,7 @@ const CompletedTaskList = () => {
 
           const completedTasksWithAssigneeNames = await Promise.all(
             response.data.completedTasks.map(async (task) => {
-              const assigneeResponse = await axios.get(`http://localhost:5000/api/subemployee/${task.assignTo}`, {
+              const assigneeResponse = await axios.get(`http://103.159.85.246:4000/api/subemployee/${task.assignTo}`, {
                 headers: {
                   Authorization: localStorage.getItem('authToken'),
                 },
@@ -169,7 +169,7 @@ const CompletedTaskList = () => {
     // Fetch Subemployee names and ObjectIds and populate the dropdown list
     const fetchSubemployees = async () => {
       try {
-        const response = await axios.get('http://localhost:5000/api/employee/subemployees/list', {
+        const response = await axios.get('http://103.159.85.246:4000/api/employee/subemployees/list', {
           headers: {
             Authorization: localStorage.getItem('authToken'),
           },
@@ -223,7 +223,7 @@ const CompletedTaskList = () => {
         editedTask.startDate !== updatedTaskData.startDate ||
         editedTask.deadlineDate !== updatedTaskData.deadlineDate
       ) {
-        await axios.put(`http://localhost:5000/api/task/open/${editedTask._id}`, updatedTaskData, {
+        await axios.put(`http://103.159.85.246:4000/api/task/open/${editedTask._id}`, updatedTaskData, {
           headers: {
             Authorization: localStorage.getItem('authToken'),
           },
@@ -267,7 +267,7 @@ const CompletedTaskList = () => {
         if (!employeeNames[task.assignTo]) {
           try {
             const token = localStorage.getItem('authToken');
-            const response = await axios.get(`http://localhost:5000/api/subemployee/${task.assignTo}`, {
+            const response = await axios.get(`http://103.159.85.246:4000/api/subemployee/${task.assignTo}`, {
               headers: {
                 Authorization: token,
               },
@@ -480,7 +480,7 @@ const CompletedTaskList = () => {
                 <span className='mr-1 '><strong>Audio:</strong></span>{" "}
                 {selectedTask.audio ? (
                   <audio controls className='w-64 h-8 md:w-96 md-h-10 text-lg'>
-                    <source src={`http://localhost:5000/${selectedTask.audio}`} type="audio/mp3" />
+                    <source src={`http://103.159.85.246:4000/${selectedTask.audio}`} type="audio/mp3" />
                     Your browser does not support the audio element.
                   </audio>
 

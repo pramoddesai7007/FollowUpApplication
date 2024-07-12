@@ -86,7 +86,7 @@
 //       return;
 //     }
 //     axios
-//       .get('http://localhost:5000/api/employee/subemployees/list', {
+//       .get('http://103.159.85.246:4000/api/employee/subemployees/list', {
 //         headers: {
 //           Authorization: localStorage.getItem('authToken'),
 //         },
@@ -226,7 +226,7 @@
 
 //     console.log("requestBody", requestBody)
 //     try {
-//       const response = await axios.post('http://localhost:5000/api/task/create', requestBody, {
+//       const response = await axios.post('http://103.159.85.246:4000/api/task/create', requestBody, {
 //         headers: {
 //           Authorization: localStorage.getItem('authToken'),
 //           'Content-Type': 'multipart/form-data',
@@ -238,7 +238,7 @@
 //         setSuccessMessage(response.data.message);
 //         setErrors([]);
 
-//         const notificationResponse = await axios.post('http://localhost:5000/api/notification/create', {
+//         const notificationResponse = await axios.post('http://103.159.85.246:4000/api/notification/create', {
 //           recipientId: formData.assignTo,
 //           taskId: response.data.taskId,
 //           message: 'A new task has been assigned to you!',
@@ -710,7 +710,7 @@ const TaskForm = () => {
       return;
     }
     axios
-      .get('http://localhost:5000/api/employee/subemployees/list', {
+      .get('http://103.159.85.246:4000/api/employee/subemployees/list', {
         headers: {
           Authorization: localStorage.getItem('authToken'),
         },
@@ -852,7 +852,7 @@ const TaskForm = () => {
 
   //   console.log("requestBody", requestBody)
   //   try {
-  //     const response = await axios.post('http://localhost:5000/api/task/create', requestBody, {
+  //     const response = await axios.post('http://103.159.85.246:4000/api/task/create', requestBody, {
   //       headers: {
   //         Authorization: localStorage.getItem('authToken'),
   //         'Content-Type': 'multipart/form-data',
@@ -864,7 +864,7 @@ const TaskForm = () => {
   //       setSuccessMessage(response.data.message);
   //       setErrors([]);
 
-  //       const notificationResponse = await axios.post('http://localhost:5000/api/notification/create', {
+  //       const notificationResponse = await axios.post('http://103.159.85.246:4000/api/notification/create', {
   //         recipientId: formData.assignTo,
   //         taskId: response.data.taskId,
   //         message: 'A new task has been assigned to you!',
@@ -947,7 +947,7 @@ const TaskForm = () => {
 
     console.log("requestBody", requestBody);
     try {
-      const response = await axios.post('http://localhost:5000/api/task/create', requestBody, {
+      const response = await axios.post('http://103.159.85.246:4000/api/task/create', requestBody, {
         headers: {
           Authorization: localStorage.getItem('authToken'),
           'Content-Type': 'multipart/form-data',
@@ -959,7 +959,7 @@ const TaskForm = () => {
         setSuccessMessage(response.data.message);
         setErrors([]);
 
-        const notificationResponse = await axios.post('http://localhost:5000/api/notification/create', {
+        const notificationResponse = await axios.post('http://103.159.85.246:4000/api/notification/create', {
           recipientId: formData.assignTo,
           taskId: response.data.taskId,
           message: 'A new task has been assigned to you!',
@@ -983,7 +983,7 @@ const TaskForm = () => {
         }
 
         // Call the reminder notification API
-        const reminderNotificationResponse = await axios.post('http://localhost:5000/api/reminderNotification/create', {
+        const reminderNotificationResponse = await axios.post('http://103.159.85.246:4000/api/reminderNotification/create', {
           recipientId: formData.assignTo,
           taskId: response.data.taskId,
           reminderTime: currentReminderTime,

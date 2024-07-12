@@ -62,7 +62,7 @@
 //         // Fetch the list of admin's companies from the API
 //         const fetchAdminCompanies = async () => {
 //             try {
-//                 const response = await axios.get('http://localhost:5000/api/company/companies');
+//                 const response = await axios.get('http://103.159.85.246:4000/api/company/companies');
 //                 if (response.status === 200) {
 //                     setAdminCompanies(response.data);
 //                 }
@@ -101,7 +101,7 @@
 //             return; // Prevent further execution of the handleSubmit function
 //         }
 //         try {
-//             const response = await axios.post('http://localhost:5000/api/employee/register', formData);
+//             const response = await axios.post('http://103.159.85.246:4000/api/employee/register', formData);
 
 //             if (response.status === 201) {
 //                 setFormData({
@@ -390,7 +390,7 @@ const EmployeeRegistration = () => {
             // Fetch the list of admin's companies from the API for superAdmin
             const fetchAdminCompanies = async () => {
                 try {
-                    const response = await axios.get('http://localhost:5000/api/company/companies');
+                    const response = await axios.get('http://103.159.85.246:4000/api/company/companies');
                     if (response.status === 200) {
                         setAdminCompanies(response.data);
                     }
@@ -452,12 +452,12 @@ const EmployeeRegistration = () => {
             return; // Prevent further execution of the handleSubmit function
         }
         try {
-            const response = await axios.post('http://localhost:5000/api/employee/register', formData);
+            const response = await axios.post('http://103.159.85.246:4000/api/employee/register', formData);
 
             console.log('Set rate response:', response);
 
 
-            await axios.post('http://localhost:5000/api/salary/set-rate', {
+            await axios.post('http://103.159.85.246:4000/api/salary/set-rate', {
                 name: formData.name,
                 email: formData.email,
                 hourlyRate: formData.upto,

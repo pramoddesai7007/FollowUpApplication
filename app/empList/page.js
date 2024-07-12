@@ -75,7 +75,7 @@ const EmployeeList = () => {
         }
         const fetchCompanies = async () => {
             try {
-                const response = await fetch('http://localhost:5000/api/company/companies');
+                const response = await fetch('http://103.159.85.246:4000/api/company/companies');
                 if (!response.ok) {
                     throw new Error(`HTTP error! Status: ${response.status}`);
                 }
@@ -104,7 +104,7 @@ const EmployeeList = () => {
 
 
     useEffect(() => {
-        fetch(`http://localhost:5000/api/employee/list?page=${currentPage}&limit=${itemsPerPage}`)
+        fetch(`http://103.159.85.246:4000/api/employee/list?page=${currentPage}&limit=${itemsPerPage}`)
             .then((response) => response.json())
             .then((data) => {
                 setEmployees(data);
@@ -146,7 +146,7 @@ const EmployeeList = () => {
             };
 
             // Send a PUT request to update the employee's details
-            await axios.put(`http://localhost:5000/api/employee/edit/${editedEmployee._id}`, updatedEmployee);
+            await axios.put(`http://103.159.85.246:4000/api/employee/edit/${editedEmployee._id}`, updatedEmployee);
 
             // Update the employee list with the edited data (optional)
             setEmployees(currentEmployees.map((employee) =>
@@ -180,7 +180,7 @@ const EmployeeList = () => {
     const handleViewClick = async (employeeId) => {
         try {
             // Send a GET request to fetch the employee by ID
-            const response = await axios.get(`http://localhost:5000/api/employee/${employeeId}`);
+            const response = await axios.get(`http://103.159.85.246:4000/api/employee/${employeeId}`);
             const employeeData = response.data;
 
             // Set the employee data to the state
@@ -202,7 +202,7 @@ const EmployeeList = () => {
                 return;
             }
             // Send a DELETE request to delete the employee by ID
-            await axios.delete(`http://localhost:5000/api/employee/delete/${employeeId}`);
+            await axios.delete(`http://103.159.85.246:4000/api/employee/delete/${employeeId}`);
 
             // Update the employee list after successful deletion (optional)
             setEmployees(employees.filter((employee) => employee._id !== employeeId));

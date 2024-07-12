@@ -77,7 +77,7 @@ const EmployeeList = () => {
       // Fetch the list of employees from your API endpoint
       const fetchEmployees = async () => {
         try {
-          const response = await axios.get(`http://localhost:5000/api/employee/subemployees/list`,
+          const response = await axios.get(`http://103.159.85.246:4000/api/employee/subemployees/list`,
             {
               headers: {
                 Authorization: localStorage.getItem('authToken'),
@@ -137,7 +137,7 @@ const EmployeeList = () => {
       };
 
       // Send a PUT request to update the employee's details
-      await axios.put(`http://localhost:5000/api/subemployee/update/${editedEmployee._id}`, updatedEmployee,
+      await axios.put(`http://103.159.85.246:4000/api/subemployee/update/${editedEmployee._id}`, updatedEmployee,
         {
           headers: {
             Authorization: localStorage.getItem('authToken'),
@@ -175,7 +175,7 @@ const EmployeeList = () => {
   const handleViewClick = async (employeeId) => {
     try {
       // Send a GET request to fetch the employee by ID
-      const response = await axios.get(`http://localhost:5000/api/subemployee/${employeeId}`,
+      const response = await axios.get(`http://103.159.85.246:4000/api/subemployee/${employeeId}`,
         {
           headers: {
             Authorization: localStorage.getItem('authToken'),
@@ -197,7 +197,7 @@ const EmployeeList = () => {
   const confirmDelete = async (employeeId) => {
     try {
       // Send a DELETE request to delete the employee by ID
-      await axios.delete(`http://localhost:5000/api/subemployee/delete/${employeeId}`,
+      await axios.delete(`http://103.159.85.246:4000/api/subemployee/delete/${employeeId}`,
         {
           headers: {
             Authorization: localStorage.getItem('authToken'),

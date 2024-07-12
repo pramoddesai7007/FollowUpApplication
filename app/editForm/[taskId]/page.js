@@ -29,7 +29,7 @@ const EditForm = ({ params }) => {
             try {
                 const authToken = localStorage.getItem('authToken'); // Retrieve the authToken from localStorage
 
-                const response = await axios.get(`http://localhost:5000/api/task/${taskId}`, {
+                const response = await axios.get(`http://103.159.85.246:4000/api/task/${taskId}`, {
                     headers: {
                         Authorization: authToken, // Include the authToken in the headers
                     },
@@ -52,7 +52,7 @@ const EditForm = ({ params }) => {
 
         const fetchAssignees = async () => {
             axios
-                .get('http://localhost:5000/api/employee/subemployees/list', {
+                .get('http://103.159.85.246:4000/api/employee/subemployees/list', {
                     headers: {
                         Authorization: localStorage.getItem('authToken'), // Include your JWT token here
                     },
@@ -93,7 +93,7 @@ const EditForm = ({ params }) => {
     //     try {
     //         const authToken = localStorage.getItem('authToken');
 
-    //         const response = await fetch(`http://localhost:5000/api/task/edit/${taskId}`, {
+    //         const response = await fetch(`http://103.159.85.246:4000/api/task/edit/${taskId}`, {
     //             method: 'PUT',
     //             headers: {
     //                 Authorization: authToken,
@@ -126,7 +126,7 @@ const EditForm = ({ params }) => {
         try {
             const authToken = localStorage.getItem('authToken');
 
-            const response = await fetch(`http://localhost:5000/api/task/edit/${taskId}`, {
+            const response = await fetch(`http://103.159.85.246:4000/api/task/edit/${taskId}`, {
                 method: 'PUT',
                 headers: {
                     Authorization: authToken,
@@ -158,7 +158,7 @@ const EditForm = ({ params }) => {
     };
 
     const handlePicturePreview = (imageUrl) => {
-        const completeImageUrl = `http://localhost:5000/${imageUrl}`; // Generate the complete image URL
+        const completeImageUrl = `http://103.159.85.246:4000/${imageUrl}`; // Generate the complete image URL
         console.log(completeImageUrl)
         setPreviewImageUrl(completeImageUrl);
         setIsPreviewModalOpen(true);
@@ -435,7 +435,7 @@ const EditForm = ({ params }) => {
                                 <div className="mb-1">
                                     Current Picture: {taskData.picture}
                                     <button
-                                        onClick={() => window.open(`http://localhost:5000/${taskData.picture}`)}
+                                        onClick={() => window.open(`http://103.159.85.246:4000/${taskData.picture}`)}
                                         className="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded-lg ml-4"
                                     >
                                         Preview
@@ -514,7 +514,7 @@ const EditForm = ({ params }) => {
                             <p className="mb-2 text-left flex item-center">
                                 {taskData.audio ? (
                                     <audio controls className='w-64 h-8 md:w-96 md-h-10 text-lg'>
-                                        <source src={`http://localhost:5000/${taskData.audio}`} type="audio/mp3" />
+                                        <source src={`http://103.159.85.246:4000/${taskData.audio}`} type="audio/mp3" />
                                         Your browser does not support the audio element.
                                     </audio>
 

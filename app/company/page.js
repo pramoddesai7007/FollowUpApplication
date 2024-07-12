@@ -72,7 +72,7 @@ const CompanyCreationForm = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://localhost:5000/api/company/createCompany', {
+      const response = await axios.post('http://103.159.85.246:4000/api/company/createCompany', {
         companyName,
       },
         {

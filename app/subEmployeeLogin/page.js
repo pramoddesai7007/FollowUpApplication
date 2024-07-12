@@ -33,7 +33,7 @@ const SubEmployeeLoginForm = () => {
         e.preventDefault();
 
         try {
-            const response = await axios.post('http://localhost:5000/api/subemployee/login', {
+            const response = await axios.post('http://103.159.85.246:4000/api/subemployee/login', {
                 email,
                 password,
             });
@@ -174,7 +174,7 @@ export default SubEmployeeLoginForm;
 
 //         try {
 //             // Send a POST request to the /login endpoint for sub-employees
-//             const response = await axios.post('http://localhost:5000/api/subemployee/login', {
+//             const response = await axios.post('http://103.159.85.246:4000/api/subemployee/login', {
 //                 email,
 //                 password,
 //             });

@@ -17,7 +17,7 @@ const ResetPasswordEmp = () => {
 
         try {
             // Send a POST request to the /resetPassword endpoint
-            const response = await axios.post(`http://localhost:5000/api/auth/resetPasswordEmp/${resetToken}`, {
+            const response = await axios.post(`http://103.159.85.246:4000/api/auth/resetPasswordEmp/${resetToken}`, {
                 newPassword: newPassword,
             });
 

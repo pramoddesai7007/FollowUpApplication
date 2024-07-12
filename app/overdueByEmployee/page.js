@@ -31,7 +31,7 @@ const formatDate = (dateString) => {
 // Helper function to fetch employee name by ID
 const getEmployeeName = async (employeeId, authToken) => {
   try {
-    const response = await axios.get(`http://localhost:5000/api/employee/${employeeId}`, {
+    const response = await axios.get(`http://103.159.85.246:4000/api/employee/${employeeId}`, {
       headers: {
         Authorization: authToken,
       },
@@ -69,7 +69,7 @@ const OverdueByEmployee = () => {
 
 
   const handlePicturePreview = (imageUrl) => {
-    const completeImageUrl = `http://localhost:5000/${imageUrl}`; // Generate the complete image URL
+    const completeImageUrl = `http://103.159.85.246:4000/${imageUrl}`; // Generate the complete image URL
     setPreviewImageUrl(completeImageUrl);
     setIsPreviewModalOpen(true);
   };
@@ -80,7 +80,7 @@ const OverdueByEmployee = () => {
       try {
         const token = localStorage.getItem('authToken');
 
-        const response = await axios.get('http://localhost:5000/api/task/tasks/over', {
+        const response = await axios.get('http://103.159.85.246:4000/api/task/tasks/over', {
           headers: {
             Authorization: token,
           },
@@ -303,7 +303,7 @@ const OverdueByEmployee = () => {
                 <span className='mr-1 '><strong>Audio:</strong></span>{" "}
                 {viewTask.audio ? (
                   <audio controls className='w=64 h-8 md:w-96 md:h-10 text-lg'>
-                    <source src={`http://localhost:5000/${viewTask.audio}`} type="audio/mp3" />
+                    <source src={`http://103.159.85.246:4000/${viewTask.audio}`} type="audio/mp3" />
                     Your browser does not support the audio element.
                   </audio>
 

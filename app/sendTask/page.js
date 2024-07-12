@@ -41,7 +41,7 @@ const ShareButton = ({ task }) => {
     const fetchAssignedByName = async () => {
       try {
         const token = localStorage.getItem('authToken');
-        const response = await axios.get(`http://localhost:5000/api/task/${task._id}`, {
+        const response = await axios.get(`http://103.159.85.246:4000/api/task/${task._id}`, {
           headers: {
             Authorization: token,
           },
@@ -124,7 +124,7 @@ const SendTasks = () => {
 
 
   const handlePicturePreview = (imageUrl) => {
-    const completeImageUrl = `http://localhost:5000/${imageUrl}`; // Generate the complete image URL
+    const completeImageUrl = `http://103.159.85.246:4000/${imageUrl}`; // Generate the complete image URL
     console.log(completeImageUrl)
     setPreviewImageUrl(completeImageUrl);
     setIsPreviewModalOpen(true);
@@ -158,7 +158,7 @@ const SendTasks = () => {
       const fetchAllTasks = async () => {
         try {
           const token = localStorage.getItem('authToken');
-          const response = await axios.get('http://localhost:5000/api/task/list', {
+          const response = await axios.get('http://103.159.85.246:4000/api/task/list', {
             headers: {
               Authorization: token,
             },
@@ -173,7 +173,7 @@ const SendTasks = () => {
               const tasksWithAssignedNames = await Promise.all(
                 response.data.tasks.map(async (task) => {
                   try {
-                    const employeeResponse = await axios.get(`http://localhost:5000/api/subemployee/${task.assignTo}`, {
+                    const employeeResponse = await axios.get(`http://103.159.85.246:4000/api/subemployee/${task.assignTo}`, {
                       headers: {
                         Authorization: token,
                       },
@@ -251,7 +251,7 @@ const SendTasks = () => {
   const handleDelete = async () => {
     try {
       const token = localStorage.getItem('authToken');
-      const response = await axios.delete(`http://localhost:5000/api/task/delete/${deleteTaskId}`, {
+      const response = await axios.delete(`http://103.159.85.246:4000/api/task/delete/${deleteTaskId}`, {
         headers: {
           Authorization: token,
         },
@@ -276,7 +276,7 @@ const SendTasks = () => {
   const handleViewClick = async (taskId) => {
     try {
       const token = localStorage.getItem('authToken');
-      const response = await axios.get(`http://localhost:5000/api/task/${taskId}`, {
+      const response = await axios.get(`http://103.159.85.246:4000/api/task/${taskId}`, {
         headers: {
           Authorization: token,
         },
@@ -287,7 +287,7 @@ const SendTasks = () => {
         taskData.startDate = formatDate(taskData.startDate);
         taskData.deadlineDate = formatDate(taskData.deadlineDate);
 
-        const employeeResponse = await axios.get(`http://localhost:5000/api/subemployee/${taskData.assignTo}`, {
+        const employeeResponse = await axios.get(`http://103.159.85.246:4000/api/subemployee/${taskData.assignTo}`, {
           headers: {
             Authorization: token,
           },
@@ -323,7 +323,7 @@ const SendTasks = () => {
         if (!employeeNames[task.assignTo]) {
           try {
             const token = localStorage.getItem('authToken');
-            const response = await axios.get(`http://localhost:5000/api/subemployee/${task.assignTo}`, {
+            const response = await axios.get(`http://103.159.85.246:4000/api/subemployee/${task.assignTo}`, {
               headers: {
                 Authorization: token,
               },
@@ -540,7 +540,7 @@ const SendTasks = () => {
                       <span className='mr-1 '><strong>Audio:</strong></span>{" "}
                       {viewTask.audio ? (
                         <audio controls className='w-64 h-8 md:w-96 md-h-10 text-lg'>
-                          <source src={`http://localhost:5000/${viewTask.audio}`} type="audio/mp3" />
+                          <source src={`http://103.159.85.246:4000/${viewTask.audio}`} type="audio/mp3" />
                           Your browser does not support the audio element.
                         </audio>
 

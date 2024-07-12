@@ -64,7 +64,7 @@ const LeadForm = () => {
         const headers = { Authorization: token };
 
         try {
-            const response = await axios.post('http://localhost:5000/api/lead/createLead', formDataWithFile, { headers });
+            const response = await axios.post('http://103.159.85.246:4000/api/lead/createLead', formDataWithFile, { headers });
             console.log('Lead created:', response.data);
             setSuccessMessage('Lead Created Successfully')
             setIsSuccessModalOpen(true)
@@ -89,7 +89,7 @@ const LeadForm = () => {
             }
             leadNotificationFormData.append('leadPicture', formData.leadPicture);
 
-            const leadNotificationResponse = await axios.post('http://localhost:5000/api/lead/create/Notification', leadNotificationFormData, { headers });
+            const leadNotificationResponse = await axios.post('http://103.159.85.246:4000/api/lead/create/Notification', leadNotificationFormData, { headers });
             console.log('Lead notification created:', leadNotificationResponse.data);
             setSuccessMessage("Lead Created Successfully")
             setIsSuccessModalOpen(true)

@@ -69,7 +69,7 @@ const VectorEmp = () => {
     const fetchData = async () => {
       try {
         const token = localStorage.getItem("authToken");
-        const response = await axios.get("http://localhost:5000/api/task/taskCounts", {
+        const response = await axios.get("http://103.159.85.246:4000/api/task/taskCounts", {
           headers: {
             Authorization: token,
           },
